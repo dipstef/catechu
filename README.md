@@ -1,4 +1,4 @@
-httpy_cache remote
+remote httpy_cache
 ==================
 
 Enable a to use the httpy_cache module remotely through a a web server or a zeromq process. 
