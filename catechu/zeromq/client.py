@@ -7,7 +7,7 @@ from catechu.zeromq import CacheCommand
 
 class ZeroMqCacheClient(object):
 
-    def __init__(self, address, *cache_args):
+    def __init__(self, address, cache_args):
         self._address = address
 
         self._context = zmq.Context()
