@@ -13,7 +13,7 @@ setup(name=name,
       author_email='dipstef@github.com',
       url='http://github.com/dipstef/{}/'.format(name),
       description=desc,
-      packages = ['catechu.http', 'catechu.zeromq'],
+      packages = ['catechu', 'catechu.http', 'catechu.zeromq'],
       platforms=['Any'],
       requires=['web.py', 'pyzmq', 'httpy']
 )
