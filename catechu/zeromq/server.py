@@ -1,5 +1,5 @@
 import zmq
-from . import CacheCommand
+from . import CacheCommand, context
 
 
 class CacheWorker(object):
@@ -8,8 +8,7 @@ class CacheWorker(object):
         self.host = self.host = '127.0.0.1' if local else '0.0.0.0'
         self.port = port
         self._caches = caches
-        self._context = zmq.Context()
-        self._socket = self._context.socket(zmq.REP)
+        self._socket = context.socket(zmq.REP)
 
     def start(self):
         self._socket.bind('tcp://{}:{}'.format(self.host, self.port))

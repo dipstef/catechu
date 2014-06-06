@@ -2,15 +2,13 @@ from contextlib import closing
 
 import zmq
 from httpy.response import HttpResponse
-from catechu.zeromq import CacheCommand
+from catechu.zeromq import CacheCommand, context
 
 
 class ZeroMqCacheClient(object):
 
     def __init__(self, address, cache_args):
         self._address = address
-
-        self._context = zmq.Context()
         self._cache_args = cache_args
 
     def get_response(self, url):
@@ -22,7 +20,7 @@ class ZeroMqCacheClient(object):
         self._execute(CacheCommand.STORE, response.request.url, response)
 
     def _execute(self, command, url, response=None):
-        with closing(self._context.socket(zmq.REQ)) as socket:
+        with closing(context.socket(zmq.REQ)) as socket:
             socket.connect('tcp://{}:{}'.format(*self._address))
 
             socket.send_pyobj((self._cache_args, command, url, response))
