@@ -1,5 +1,5 @@
 import cPickle as pickle
-from httpy.client import http_client
+from httpy_client import http_client
 
 from httpy.response import HttpResponse
 from urlo.parser import build_url

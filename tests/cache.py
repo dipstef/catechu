@@ -2,7 +2,7 @@ from httpy.cache.cache import HttpResponseCached
 
 from httpy.cache.client import ClientOrCache
 
-from httpy.client import HttpClient
+from httpy_client import HttpClient
 
 from catechu.zeromq.client import ZeroMqCacheClient
 
