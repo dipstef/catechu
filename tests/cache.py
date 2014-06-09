@@ -1,6 +1,6 @@
-from httpy.cache.cache import HttpResponseCached
+from httpy_cache.cache import HttpResponseCached
 
-from httpy.cache.client import ClientOrCache
+from httpy_cache.client import ClientOrCache
 
 from httpy_client import HttpClient
 
