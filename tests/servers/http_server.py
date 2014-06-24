@@ -1,4 +1,4 @@
-from httpy_cache import CacheConnect
+from quice import CacheConnect
 import quecco.thread as quecco_thread
 
 from catechu.http.server import serve as http_serve

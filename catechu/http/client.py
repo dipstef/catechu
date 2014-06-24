@@ -1,8 +1,8 @@
 import cPickle as pickle
-from httpy_client import http_client
+from httpy.client import http_client
 
-from httpy.response import HttpResponse
-from urlo.parser import build_url
+from httpy.http.response import HttpResponse
+from urlo.unquoted import build_url
 
 
 class CacheClient(object):

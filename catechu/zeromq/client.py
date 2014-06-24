@@ -1,7 +1,7 @@
 from contextlib import closing
 
 import zmq
-from httpy.response import HttpResponse
+from httpy.http.response import HttpResponse
 from catechu.zeromq import CacheCommand, context
 
 

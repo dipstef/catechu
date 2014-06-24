@@ -1,8 +1,6 @@
-from httpy_cache.cache import HttpResponseCached
-
-from httpy_cache.client import ClientOrCache
-
-from httpy_client import HttpClient
+from quiche.cache import HttpResponseCached
+from quiche.client import CacheOrClient
+from httpy.client import HttpClient
 
 from catechu.zeromq.client import ZeroMqCacheClient
 
@@ -13,7 +11,7 @@ from tests import caches
 def _test_cache(cache, url):
     caches.remove_path()
 
-    client_cache = ClientOrCache(HttpClient(), cache)
+    client_cache = CacheOrClient(cache, HttpClient())
 
     try:
         response = client_cache.get(url)

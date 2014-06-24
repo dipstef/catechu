@@ -1,13 +1,14 @@
 import atexit
 import os
-from httpy import cache
+import quiche
+
 
 cache_path = os.path.join(os.path.dirname(__file__), 'cache.db')
 
 
 class TestCaches(object):
 
-    def __init__(self, connect=cache.connect):
+    def __init__(self, connect=quiche.connect):
         self._cache = None
         atexit.register(self.close)
         self._connect = connect
