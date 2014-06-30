@@ -1,13 +1,12 @@
 import cPickle as pickle
-from httpy.client import http_client
+from httpy import HttpResponse, httpy
 
-from httpy.http.response import HttpResponse
 from urlo.unquoted import build_url
 
 
 class CacheClient(object):
 
-    def __init__(self, address, path='/cache/response', client=http_client):
+    def __init__(self, address, path='/cache/response', client=httpy):
         self._client = client
         self._url = build_url(host=address[0], port=address[1], path=path)
 
