@@ -11,8 +11,8 @@ Same interface of https://github.com/dipstef/quiche
 
 Connections
 ===========
-Define a factory returning a cache connection given some params.
-As an example we return a different cache for http domain.
+Return a ``sqlite3`` cache database given some parameters.
+An example would be to create a different cache for each http domain.
 
 .. code-block:: python
 
@@ -35,6 +35,7 @@ Zeromq
 
 
 Server:
+
 .. code-block:: python
 
     from catechu.zeromq import server
