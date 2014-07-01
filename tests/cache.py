@@ -1,6 +1,5 @@
-from quiche.cache import HttpResponseCached
-from quiche.client import CacheOrClient
-from httpy.client import HttpClient
+from quiche import CacheOrClient
+from quiche.cache import CachedHttpResponse
 
 from catechu.zeromq.client import ZeroMqCacheClient
 
@@ -11,16 +10,16 @@ from tests import caches
 def _test_cache(cache, url):
     caches.remove_path()
 
-    client_cache = CacheOrClient(cache, HttpClient())
+    client_cache = CacheOrClient(cache)
 
     try:
         response = client_cache.get(url)
-        assert not isinstance(response, HttpResponseCached)
+        assert not isinstance(response, CachedHttpResponse)
         retrieve_date = response.date
 
         response = client_cache.get(url)
 
-        assert isinstance(response, HttpResponseCached)
+        assert isinstance(response, CachedHttpResponse)
         assert response.date == retrieve_date
     finally:
         caches.remove_path()

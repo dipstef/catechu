@@ -1,7 +1,7 @@
 from contextlib import closing
 
 import zmq
-from httpy.http.response import HttpResponse
+from httpy import HttpResponse
 
 
 class ZeroMqCacheClient(object):

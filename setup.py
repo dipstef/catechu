@@ -1,19 +1,43 @@
-from distutils.core import setup
+#!/usr/bin/env python
 
-VERSION = '0.1'
+import os
+import sys
 
-desc = """Sqlite response cache for httpy. Used together with an httpy_client will retrieve cached responses or
- store responses from the client."""
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
-name = 'catechu'
+# Publish Helper.
+if sys.argv[-1] == 'publish':
+    os.system('python setup.py sdist upload')
+    sys.exit()
 
-setup(name=name,
-      version=VERSION,
-      author='Stefano Dipierro',
-      author_email='dipstef@github.com',
-      url='http://github.com/dipstef/{}/'.format(name),
-      description=desc,
-      packages = ['catechu', 'catechu.http', 'catechu.zeromq'],
-      platforms=['Any'],
-      requires=['web.py', 'pyzmq', 'httpy']
+CLASSIFIERS = [
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'License :: OSI Approved :: Apache Software License',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 2.6',
+    'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3.2',
+    'Topic :: Internet',
+    'Topic :: Utilities',
+]
+
+settings = dict(
+    name='catechu',
+    version='0.1',
+    description='Sqlite http cache',
+    long_description=open('README.rst').read(),
+    author='Stefano Dipierro',
+    license='Apache 2.0',
+    url='https://github.com/dipstef/catechu',
+    classifiers=CLASSIFIERS,
+    keywords='http client content connection cache sqlite database',
+    packages=['catechu', 'catechu.http', 'catechu.zeromq'],
+    test_suite='tests',
+    requires=['web.py', 'pyzmq', 'httpy']
 )
+
+setup(**settings)

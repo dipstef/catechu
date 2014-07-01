@@ -1,5 +1,5 @@
-from quice import CacheConnect
 import quecco
+from quiche import CacheConnect
 
 from catechu.http.server import serve as http_serve
 from tests import TestCaches
