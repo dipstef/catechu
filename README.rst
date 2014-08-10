@@ -1,6 +1,6 @@
-Catechu
-=======
-Remote interface for the ``quiche`` http response cache.
+Quiche
+======
+Remote interface for the ``cachew`` http response cache.
 
 Uses same ideas of ``requem`` for querying ``sqlite3`` database remotely.
 For more info: https://github.com/dipstef/requem
@@ -38,7 +38,7 @@ Server:
 
 .. code-block:: python
 
-    from catechu.zeromq import server
+    from quiche.zeromq import server
 
     >>> server.serve(caches, port=9090)
 
@@ -47,7 +47,7 @@ Client:
 
 .. code-block:: python
 
-    from catechu.zeromq.client import ZeroMqCacheClient
+    from quiche.zeromq.client import ZeroMqCacheClient
     from quiche import CacheOrClient
 
     cache = ZeroMqCacheClient(('server-address', 9090))
@@ -64,7 +64,7 @@ Server:
 
 .. code-block:: python
 
-    from catechu.http import server
+    from quiche.http import server
 
     >>> server.serve(caches, port=9090)
 
@@ -72,7 +72,7 @@ Client:
 
 .. code-block:: python
 
-    from catechu.http.client import CacheClient
+    from quiche.http.client import CacheClient
 
     cache = CacheClient(('127.0.0.1', 8087))
     ....

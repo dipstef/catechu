@@ -2,8 +2,8 @@ from multiprocessing import Pool
 import timeit
 from procol.console import print_err_trace
 
-from catechu.http.client import CacheClient
-from catechu.zeromq.client import ZeroMqCacheClient
+from quiche.http.client import CacheClient
+from quiche.zeromq.client import ZeroMqCacheClient
 from tests import caches
 
 

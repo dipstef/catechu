@@ -1,9 +1,9 @@
 from quiche import CacheOrClient
 from quiche.cache import CachedHttpResponse
 
-from catechu.zeromq.client import ZeroMqCacheClient
+from quiche.zeromq.client import ZeroMqCacheClient
 
-from catechu.http.client import CacheClient
+from quiche.http.client import CacheClient
 from tests import caches
 
 

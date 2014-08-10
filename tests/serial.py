@@ -1,7 +1,7 @@
 import timeit
 
-from catechu.http.client import CacheClient
-from catechu.zeromq.client import ZeroMqCacheClient
+from quiche.http.client import CacheClient
+from quiche.zeromq.client import ZeroMqCacheClient
 from tests import caches
 
 

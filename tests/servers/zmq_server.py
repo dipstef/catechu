@@ -1,4 +1,4 @@
-from catechu.zeromq import server
+from quiche.zeromq import server
 from tests import caches
 
 

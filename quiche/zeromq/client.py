@@ -2,7 +2,7 @@ from contextlib import closing
 
 import zmq
 from httpy import HttpResponse
-from catechu.zeromq import CacheCommand, context
+from quiche.zeromq import CacheCommand, context
 
 
 class ZeroMqCacheClient(object):

@@ -26,16 +26,16 @@ CLASSIFIERS = [
 ]
 
 settings = dict(
-    name='catechu',
+    name='quiche',
     version='0.1',
     description='Sqlite http cache',
     long_description=open('README.rst').read(),
     author='Stefano Dipierro',
     license='Apache 2.0',
-    url='https://github.com/dipstef/catechu',
+    url='https://github.com/dipstef/quiche',
     classifiers=CLASSIFIERS,
     keywords='http client content connection cache sqlite database',
-    packages=['catechu', 'catechu.http', 'catechu.zeromq'],
+    packages=['quiche', 'quiche.http', 'quiche.zeromq'],
     test_suite='tests',
     requires=['web.py', 'pyzmq', 'httpy']
 )

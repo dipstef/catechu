@@ -1,7 +1,7 @@
 import quecco
 from quiche import CacheConnect
 
-from catechu.http.server import serve as http_serve
+from quiche.http.server import serve as http_serve
 from tests import TestCaches
 
 #sqlite concurrent connections based on a thread producer-consumer queue
