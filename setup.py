@@ -36,8 +36,7 @@ settings = dict(
     classifiers=CLASSIFIERS,
     keywords='http client content connection cache sqlite database',
     packages=['quiche', 'quiche.http', 'quiche.zeromq'],
-    test_suite='tests',
-    requires=['web.py', 'pyzmq', 'httpy']
+    test_suite='tests'
 )
 
-setup(**settings)
+setup(requires=['bottle', 'pyzmq', 'httpy'],**settings)

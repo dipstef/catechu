@@ -1,10 +1,10 @@
 import quecco
-from quiche import CacheConnect
 
+from cachew import CacheConnect
 from quiche.http.server import serve as http_serve
 from tests import TestCaches
 
-#sqlite concurrent connections based on a thread producer-consumer queue
+# sqlite concurrent connections based on a thread producer-consumer queue
 caches = TestCaches(connect=CacheConnect(connection=quecco.threads))
 
 

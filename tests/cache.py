@@ -1,5 +1,4 @@
-from quiche import CacheOrClient
-from quiche.cache import CachedHttpResponse
+from cachew import CachedHttpResponse, CacheOrClient
 
 from quiche.zeromq.client import ZeroMqCacheClient
 
