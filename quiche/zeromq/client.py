@@ -11,7 +11,7 @@ class ZeroMqCacheClient(object):
         self._address = address
         self._cache_args = cache_args
 
-    def get_response(self, url):
+    def get(self, url):
         return self._execute(CacheCommand.GET, url)
 
     def store(self, response):

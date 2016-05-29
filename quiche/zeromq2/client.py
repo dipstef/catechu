@@ -17,7 +17,7 @@ class ZeroMqCacheClient(object):
         self._store_socket = self._context.socket(zmq.PUSH)
         self._store_socket.connect('tcp://{}:{}'.format(*writer_address))
 
-    def get_response(self, url):
+    def get(self, url):
         with closing(self._context.socket(zmq.REQ)) as socket:
             socket.connect('tcp://{}:{}'.format(*self._result_address))
 

@@ -16,7 +16,7 @@ class CacheClient(object):
 
         return self._client.post(self._url, data={'response': response_string}, timeout=None)
 
-    def get_response(self, url):
+    def get(self, url):
         response = self._client.get(self._url, timeout=None, params={'url': url})
         if response.body:
             return pickle.loads(response.body)

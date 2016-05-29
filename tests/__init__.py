@@ -13,7 +13,7 @@ class TestCaches(object):
         atexit.register(self.close)
         self._connect = connect
 
-    #Can return a different cache for each domain for instance
+    # Can return a different cache for each domain for instance
     def get_cache(self, url, *args, **kwargs):
         if not self._cache or not os.path.exists(cache_path):
             self._cache = self._connect(cache_path)

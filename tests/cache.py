@@ -27,14 +27,14 @@ def _test_cache(cache, url):
 
 def _test_zero_mq():
     print 'Testing Zero-Mq'
-    #Start zero-mq worker
+    # Start zero-mq worker
     cache = ZeroMqCacheClient(('127.0.0.1', 9090))
     _test_cache(cache, 'http://www.repubblica.it')
 
 
 def _test_http():
     print 'Testing Http'
-    #Start http server
+    # Start http server
     cache = CacheClient(('127.0.0.1', 8087))
     _test_cache(cache, 'http://www.repubblica.it')
 

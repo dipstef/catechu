@@ -23,17 +23,17 @@ def _cache_parallel_test(fun, url, processes=5, numbers=10, times=1):
 def _get_mq_response(url):
     _cache_mq = ZeroMqCacheClient(('127.0.0.1', 9090))
     try:
-        return _cache_mq.get_response(url)
+        return _cache_mq.get(url)
     except:
         print_err_trace()
 
 
 def _get_http_response(url):
-    return _cache_http.get_response(url)
+    return _cache_http.get(url)
 
 
 def test_parallel(url, times=10):
-    #warmup
+    # warmup
     _get_mq_response(url)
     _get_http_response(url)
 
