@@ -87,6 +87,7 @@ class CachesPlugin(BottlePlugin):
         self._caches = caches
 
     def close(self):
+        print 'Closing Caches'
         self._caches.close()
 
 
@@ -97,7 +98,3 @@ def serve(page_caches, port=8087, body_max_mb=100):
     app.install(plugin)
 
     app.run(port=port)
-
-    # After Keyboard Interrupt
-    print 'Closing Caches'
-    plugin.close()
