@@ -6,9 +6,6 @@ from bottle import Bottle, BaseRequest, request
 
 app = Bottle()
 
-urls = ('/cache/response', 'PageCacheResponse',
-        '/cache', 'PageCacheContent')
-
 
 @app.get('/cache/response')
 def get_response(caches):
